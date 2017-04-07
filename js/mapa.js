@@ -12,7 +12,8 @@ function initialize() {
     var options = {
         zoom: 10,
         center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false
     };
 
     map = new google.maps.Map(document.getElementById("mapa"), options);
@@ -56,7 +57,7 @@ function carregarPontos() {
                 $("#pagina").html("<b>Página:</b> "+ ponto.Pagina);
                 $("#cidade").html("<b>Cidade/UF:</b> "+ ponto.Cidade + " / " + ponto.UF);
                 $("#docentes").html("<b>Docentes:</b> "+ ponto.Docentes_Permanentes);
-                $("#ano").html("<b>Ano:</b> "+ ponto.Ano_Criacao);
+                $("#ano").html("<b>Ano Criação:</b> "+ ponto.Ano_Criacao);
                 $("#qtde_mestrado").html("<b>Egressos Mestrado:</b> "+ ponto.Qtd_egresso_Mestrado);
                 $("#qtde_doutorado").html("<b>Egressos Doutorado:</b> "+ ponto.Qtd_egresso_Doutorado);
                 $("#bolsistas").html("<b>Bolsistas:</b> "+ ponto.Bolsistas);
