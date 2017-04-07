@@ -1,13 +1,16 @@
 var map;
-var idInfoBoxAberto;
 var infoBox = [];
 var markers = [];
 
+/**
+ * @author Rodrigo Alexandrino
+ * Inicia o mapa na posição 0,0
+ */
 function initialize() {
-    var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
+    var latlng = new google.maps.LatLng(0, 0);
 
     var options = {
-        zoom: 5,
+        zoom: 10,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -18,6 +21,7 @@ function initialize() {
 initialize();
 
 /**
+ * * @author Rodrigo Alexandrino
  * Ler o arquivo json e cria os pontos no mapa
  */
 function carregarPontos() {
@@ -26,10 +30,13 @@ function carregarPontos() {
 
         var latlngbounds = new google.maps.LatLngBounds();
 
+        //equivalente ao for
         $.each(pontos, function (index, ponto) {
+
+            //criação do marcador
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(ponto.Latitude, ponto.Longitude),
-                title: "Meu ponto personalizado!",
+                title: "Programa de Mestrado!",
                 icon: 'img/marcador.png'
             });
 
@@ -41,14 +48,8 @@ function carregarPontos() {
             infoBox[ponto.Codigo] = new InfoBox(myOptions);
             infoBox[ponto.Codigo].marker = marker;
 
+            //listener do clique no marcador
             infoBox[ponto.Codigo].listener = google.maps.event.addListener(marker, 'click', function (e) {
-                // programa
-                // cidade
-                // docentes
-                // ano
-                // qtde_mestrado
-                // qtde_doutorado
-                // bolsistas
                 $("#universidade").html(ponto.Universidade + " - " + ponto.Sigla);
                 $("#programa").html('<b>Curso:</b> '+ ponto.Curso);
                 $("#codigo_programa").html("<b>Código:</b> "+ ponto.Codigo);
