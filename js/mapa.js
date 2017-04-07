@@ -54,13 +54,23 @@ function carregarPontos() {
                 $("#programa").html('<b>Curso:</b> '+ ponto.Curso);
                 $("#codigo_programa").html("<b>Código:</b> "+ ponto.Codigo);
                 $("#pagina").html("<b>Página:</b> "+ ponto.Pagina);
-                $("#linhas_pesquisa").html("<b>Linhas de Pesquisa:</b> "+ ponto.Linhas_de_Pesquisa);
                 $("#cidade").html("<b>Cidade/UF:</b> "+ ponto.Cidade + " / " + ponto.UF);
                 $("#docentes").html("<b>Docentes:</b> "+ ponto.Docentes_Permanentes);
                 $("#ano").html("<b>Ano:</b> "+ ponto.Ano_Criacao);
                 $("#qtde_mestrado").html("<b>Egressos Mestrado:</b> "+ ponto.Qtd_egresso_Mestrado);
                 $("#qtde_doutorado").html("<b>Egressos Doutorado:</b> "+ ponto.Qtd_egresso_Doutorado);
                 $("#bolsistas").html("<b>Bolsistas:</b> "+ ponto.Bolsistas);
+
+
+                var linhasHTML = "<b>Linhas de Pesquisa:</b>";
+                linhasHTML += '<ul>';
+                $("#linhas_pesquisa").html(+ ponto.Linhas_de_Pesquisa);
+                $.each(ponto.Linhas_de_Pesquisa, function (i, linha) {
+                    linhasHTML += "<li>"+ linha.descricao +"</li>";
+                });
+
+                linhasHTML += '</ul>';
+                $("#linhas_pesquisa").html(linhasHTML);
                 $('#myModal').modal('show');
             });
 
