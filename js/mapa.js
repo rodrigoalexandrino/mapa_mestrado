@@ -37,7 +37,7 @@ function carregarPontos() {
             //criação do marcador
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(ponto.Latitude, ponto.Longitude),
-                title: "Programa de Mestrado!",
+                title: ponto.Universidade + " - " + ponto.Sigla,
                 icon: 'img/marcador.png'
             });
 
@@ -54,7 +54,7 @@ function carregarPontos() {
                 $("#universidade").html(ponto.Universidade + " - " + ponto.Sigla);
                 $("#programa").html('<b>Curso:</b> '+ ponto.Curso);
                 $("#codigo_programa").html("<b>Código:</b> "+ ponto.Codigo);
-                $("#pagina").html("<b>Página:</b> "+ ponto.Pagina);
+                $("#pagina").html("<b>Página:</b> <a target=\"_blank\" href=\"" + ponto.Pagina +"\"\>" + ponto.Pagina +"</a>");
                 $("#cidade").html("<b>Cidade/UF:</b> "+ ponto.Cidade + " / " + ponto.UF);
                 $("#docentes").html("<b>Docentes:</b> "+ ponto.Docentes_Permanentes);
                 $("#ano").html("<b>Ano Criação:</b> "+ ponto.Ano_Criacao);
