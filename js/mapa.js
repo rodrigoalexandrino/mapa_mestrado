@@ -23,7 +23,7 @@ function initialize() {
 
 /**
  * * @author Rodrigo Alexandrino
- * Ler o arquivo json e cria os pontos no mapa
+ * Ler o arquivo json
  */
 function carregarPontos(filtro) {
 
@@ -32,19 +32,24 @@ function carregarPontos(filtro) {
     if(filtro == 0){
         $.getJSON('js/pontos.json', function (pontos) {
             var latlngbounds = new google.maps.LatLngBounds();
-            lerArray(pontos, latlngbounds);
-            map.fitBounds(latlngbounds);
+            lerArray(pontos);
         });
 
     }else{
-        var latlngbounds = new google.maps.LatLngBounds();
-        lerArray(filtro, latlngbounds);
-        map.fitBounds(latlngbounds);        
+        
+        lerArray(filtro);       
     }
 
 }
+/**
+ * cria os pontos no mapa
+ * @param  {array} pontos formato JSON
+ * @return {[type]}
+ */
+function lerArray(pontos){
+    //extremidades do mapa
+    var latlngbounds = new google.maps.LatLngBounds();
 
-function lerArray(pontos, latlngbounds){
     //equivalente ao for
         $.each(pontos, function (index, ponto) {
 
@@ -96,9 +101,8 @@ function lerArray(pontos, latlngbounds){
             marker.setMap(map);
             latlngbounds.extend(marker.position);
         });
+        map.fitBounds(latlngbounds); 
 }
-
-carregarPontos(0);
 
 $(".select_li").click(function(){
 
@@ -121,10 +125,12 @@ $(".select_li").click(function(){
 
         if(pontos_uf.length > 0){
         Materialize.toast('Foram encontrados '+ pontos_uf.length+' Programa(s) de Mestrado em '+uf, 4000);    
-            var latlngbounds = new google.maps.LatLngBounds();
-            carregarPontos(pontos_uf, latlngbounds);
+            carregarPontos(pontos_uf);
     }else{
         Materialize.toast('Não foi encontrado nenhum Programa de Mestrado encontrado', 4000);
     }
     });
 });
+
+
+carregarPontos(0);
