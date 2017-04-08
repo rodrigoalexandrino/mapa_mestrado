@@ -19,19 +19,33 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("mapa"), options);
 }
 
-initialize();
+// initialize();
 
 /**
  * * @author Rodrigo Alexandrino
  * Ler o arquivo json e cria os pontos no mapa
  */
-function carregarPontos() {
+function carregarPontos(filtro) {
 
-    $.getJSON('js/pontos.json', function (pontos) {
+    initialize();
 
+    if(filtro == 0){
+        $.getJSON('js/pontos.json', function (pontos) {
+            var latlngbounds = new google.maps.LatLngBounds();
+            lerArray(pontos, latlngbounds);
+            map.fitBounds(latlngbounds);
+        });
+
+    }else{
         var latlngbounds = new google.maps.LatLngBounds();
+        lerArray(filtro, latlngbounds);
+        map.fitBounds(latlngbounds);        
+    }
 
-        //equivalente ao for
+}
+
+function lerArray(pontos, latlngbounds){
+    //equivalente ao for
         $.each(pontos, function (index, ponto) {
 
             //criação do marcador
@@ -82,11 +96,35 @@ function carregarPontos() {
             marker.setMap(map);
             latlngbounds.extend(marker.position);
         });
-
-        map.fitBounds(latlngbounds);
-
-    });
-
 }
 
-carregarPontos();
+carregarPontos(0);
+
+$(".select_li").click(function(){
+
+    //fecha o ul
+    $('#category-list').toggle();
+
+    var uf = String($(this).text());
+    if(uf == 'TODOS'){
+        Materialize.toast('Listando todos os Programa de Mestrado', 4000);
+        carregarPontos(0);
+        return;
+    }
+    var pontos_uf = [];
+    $.getJSON('js/pontos.json', function (pontos) {
+        $.each(pontos, function (index, ponto) {
+            if(uf == ponto.UF){
+                pontos_uf.push(ponto);
+            }
+        });
+
+        if(pontos_uf.length > 0){
+        Materialize.toast('Foram encontrados '+ pontos_uf.length+' Programa(s) de Mestrado em '+uf, 4000);    
+            var latlngbounds = new google.maps.LatLngBounds();
+            carregarPontos(pontos_uf, latlngbounds);
+    }else{
+        Materialize.toast('Não foi encontrado nenhum Programa de Mestrado encontrado', 4000);
+    }
+    });
+});
