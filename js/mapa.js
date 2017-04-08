@@ -72,7 +72,7 @@ function carregarPontos() {
 
                 linhasHTML += '</ul>';
                 $("#linhas_pesquisa").html(linhasHTML);
-                $('#myModal').modal('show');
+                $('#myModal').modal('open');
             });
 
             //adicionar no mapa

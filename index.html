@@ -4,50 +4,69 @@
     <meta charset="utf-8"/>
     <title>Mapa Mestrado</title>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
-<div id="mapa" style="height: 500px; width: 700px">
-</div>
+<header>
+    <nav class="teal lighten-2">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Mapa Mestrado</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section class="corpo">
+    <div class="row">
+        <div class="col s12 m4">
+            <h4 class="light-blue-textht">
+                Mapa
+            </h4>
+            <p>
+                Este é um mapa com todas as Universidades que possuem programas de
+                Pós-Graduação em Ciências da Computação com nota 3.
+            </p>
+        </div>
+        <div class="col s12 m8">
+            <div class="card-panel hoverable">
+                <div id="mapa"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 id="universidade" class="modal-title">Universidade</h4>
-            </div>
-            <div class="modal-body">
-                <p id="codigo_programa">Código</p>
-                <p id="programa">Programa</p>
-                <p id="cidade">Cidade / UF</p>
-                <p id="pagina">Página</p>
-                <p id="docentes">Docentes</p>
-                <p id="ano">Ano Criação</p>
-                <p id="qtde_mestrado">Qtde. Mestrado</p>
-                <p id="qtde_doutorado">Qtde. Doutorado</p>
-                <p id="bolsistas">Bolsistas</p>
-                <p/>
-                <p id="linhas_pesquisa">Linhas de Pesquisa</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-
+<!-- Modal Structure -->
+<div id="myModal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h5>Universidade</h5>
+        <p id="codigo_programa">Código</p>
+        <p id="programa">Programa</p>
+        <p id="cidade">Cidade / UF</p>
+        <p id="pagina">Página</p>
+        <p id="docentes">Docentes</p>
+        <p id="ano">Ano Criação</p>
+        <p id="qtde_mestrado">Qtde. Mestrado</p>
+        <p id="qtde_doutorado">Qtde. Doutorado</p>
+        <p id="bolsistas">Bolsistas</p>
+        <p/>
+        <p id="linhas_pesquisa">Linhas de Pesquisa</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect red white-text waves-green btn-flat">Fechar</a>
     </div>
 </div>
+
 
 <script src="js/jquery.min.js"></script>
 
@@ -61,8 +80,14 @@
 <!-- Arquivo de inicialização do mapa -->
 <script src="js/mapa.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="libs/bootstrap/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+<script src="js/materialize.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('#myModal').modal();
+    });
+
+</script>
 </body>
 </html>
