@@ -1,7 +1,6 @@
 var map;
 var infoBox = [];
 var markers = [];
-
 /**
  * @author Rodrigo Alexandrino
  * Inicia o mapa na posição 0,0
@@ -19,7 +18,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("mapa"), options);
 }
 
-// initialize();
+insereLinhasPesquisa();
 
 /**
  * * @author Rodrigo Alexandrino
@@ -34,9 +33,7 @@ function carregarPontos(filtro) {
             var latlngbounds = new google.maps.LatLngBounds();
             lerArray(pontos);
         });
-
     }else{
-        
         lerArray(filtro);       
     }
 
@@ -49,7 +46,6 @@ function carregarPontos(filtro) {
 function lerArray(pontos){
     //extremidades do mapa
     var latlngbounds = new google.maps.LatLngBounds();
-
     //equivalente ao for
         $.each(pontos, function (index, ponto) {
 
@@ -101,7 +97,37 @@ function lerArray(pontos){
             marker.setMap(map);
             latlngbounds.extend(marker.position);
         });
-        map.fitBounds(latlngbounds); 
+        map.fitBounds(latlngbounds);
+}
+
+function insereLinhasPesquisa(){
+    var linhas_pesquisa = [];
+    $.getJSON('js/pontos.json', function (pontos) {
+        $.each(pontos, function (index, ponto) {
+            $.each(ponto.Linhas_de_Pesquisa, function (i, linha) {
+                var descricao = String(linha.descricao);
+                lLen = linhas_pesquisa.length;
+                if(linhas_pesquisa.length == 0){
+                    linhas_pesquisa[lLen] = descricao;
+                }else{
+                    for (j = 0; j < lLen; j++) {
+                        if(linhas_pesquisa[j] != descricao){
+                            linhas_pesquisa[lLen] = descricao;
+
+                        }
+                    }
+                }
+            });
+        });
+        linhas_pesquisa.sort();
+    
+        $.each(linhas_pesquisa, function (i, item) {
+    $('#select_linhas_pesquisa').append($('<option>', { 
+        value: item.value,
+        text : item.text 
+    }));
+});
+    });
 }
 
 $(".select_li").click(function(){
