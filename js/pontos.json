@@ -248,5 +248,48 @@
     "Latitude": -25.44378,
     "Longitude": -49.35398,
     "Codigo": "40006018025P8"
+  },
+   {
+    "Cidade": "Brasília",
+    "UF": "DF",
+    "Pagina": "http://ppca.unb.br/",
+    "Linhas_de_Pesquisa":
+    [
+      { "descricao" : "Infraestrutura de TI"},
+      { "descricao" : "Engenharia de Software"}
+    ],
+    "Docentes_Permanentes": 10,
+    "Ano_Criacao": 2012,
+    "Qtd_egresso_Mestrado": 51,
+    "Qtd_egresso_Doutorado": 0,
+    "Bolsistas": 0,
+    "Curso": "COMPUTAÇÃO APLICADA (PPGCA)",
+    "Universidade": "UNIVERSIDADE DE BRASÍLIA",
+    "Sigla": "UNB",
+    "Latitude": -15.75863,
+    "Longitude": -47.86911,
+    "Codigo": "53001010098P3"
+  },
+  {
+    "Cidade": "Campo Grande",
+    "UF": "MS",
+    "Pagina": "http://facom.sites.ufms.br/mestradoprofissional/",
+    "Linhas_de_Pesquisa":
+    [
+      { "descricao" : "Engenharia de Software"},
+      { "descricao" : "Engenharia de Software"},
+      { "descricao" : "Robótica e Aplicações Distribuídas"}
+    ],
+    "Docentes_Permanentes": 18,
+    "Ano_Criacao": 2013,
+    "Qtd_egresso_Mestrado": 8,
+    "Qtd_egresso_Doutorado": 0,
+    "Bolsistas": 3,
+    "Curso": "COMPUTAÇÃO APLICADA (PPGCA)",
+    "Universidade": "FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL",
+    "Sigla": "FACOM",
+    "Latitude": -20.50326,
+    "Longitude": -54.61126,
+    "Codigo": "51001012038P1"
   }
 ]
