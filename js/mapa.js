@@ -59,14 +59,14 @@ function lerArray(pontos){
                 pixelOffset: new google.maps.Size(-150, 0)
             };
 
-            infoBox[ponto.Codigo] = new InfoBox(myOptions);
-            infoBox[ponto.Codigo].marker = marker;
+            infoBox[index] = new InfoBox(myOptions);
+            infoBox[index].marker = marker;
 
             //listener do clique no marcador
-            infoBox[ponto.Codigo].listener = google.maps.event.addListener(marker, 'click', function (e) {
+            infoBox[index].listener = google.maps.event.addListener(marker, 'click', function (e) {
                 $("#universidade").html(ponto.Universidade + " - " + ponto.Sigla);
                 $("#programa").html('<b>Curso:</b> '+ ponto.Curso);
-                $("#codigo_programa").html("<b>Código:</b> "+ ponto.Codigo);
+                // $("#codigo_programa").html("<b>Código:</b> "+ ponto.Codigo);
                 $("#pagina").html("<b>Página:</b> <a target=\"_blank\" href=\"" + ponto.Pagina +"\"\>" + ponto.Pagina +"</a>");
                 $("#cidade").html("<b>Cidade/UF:</b> "+ ponto.Cidade + " / " + ponto.UF);
                 $("#docentes").html("<b>Docentes:</b> "+ ponto.Docentes_Permanentes);
