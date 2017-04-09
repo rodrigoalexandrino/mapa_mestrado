@@ -35,9 +35,9 @@
             </nav>
         </li>
         <li class="card" style="position: absolute; top:55px;">
-            <div class="card-image">
-                <img src="img/1.jpg" style="height: 200px;">
-            </div>
+                <select id="select_cursos">
+                    <option value="" selected>Todos os Cursos</option>
+                </select>
             <div class="card-content">
                 <h5>Mapa</h5>
                 <p>
@@ -51,9 +51,6 @@
                 &copy;DARSH7N
             </div>
         </li>
-        <select id="select_cursos">
-                <option value="" selected>Todos os Cursos</option>
-            </select>
     </ul>
 
     <nav class="fixed  purple darken-3">
@@ -181,16 +178,13 @@
                                 data-label="Service">
                                 <a class="select_li item white-text">TO</a>
                             </li>
-
                         </ul>
                     </div>
-                    <div id="mapa"></div>
                 </div>
             </div>
         </div>
     </nav>
 </div>
-
 
 <!-- Modal -->
 <!-- Modal Structure -->
@@ -310,6 +304,8 @@
         </div>
     </div>
 </div>
+
+<div id="mapa"></div>
 
 <footer class="page-footer purple darken-3">
 
