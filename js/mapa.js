@@ -9,7 +9,7 @@ function initialize() {
     var latlng = new google.maps.LatLng(0, 0);
 
     var options = {
-        zoom: 10,
+        zoom: 5,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false
@@ -17,8 +17,6 @@ function initialize() {
 
     map = new google.maps.Map(document.getElementById("mapa"), options);
 }
-
-insereLinhasPesquisa();
 
 /**
  * * @author Rodrigo Alexandrino
@@ -101,6 +99,7 @@ function lerArray(pontos){
 }
 
 function insereLinhasPesquisa(){
+    $('#select_linhas_pesquisa').material_select();
     var linhas_pesquisa = [];
     $.getJSON('js/pontos.json', function (pontos) {
         $.each(pontos, function (index, ponto) {
@@ -111,9 +110,9 @@ function insereLinhasPesquisa(){
                     linhas_pesquisa[lLen] = descricao;
                 }else{
                     for (j = 0; j < lLen; j++) {
-                        if(linhas_pesquisa[j] != descricao){
+                        if(linhas_pesquisa[j] === descricao){
+                        }else{
                             linhas_pesquisa[lLen] = descricao;
-
                         }
                     }
                 }
@@ -123,9 +122,10 @@ function insereLinhasPesquisa(){
     
         $.each(linhas_pesquisa, function (i, item) {
     $('#select_linhas_pesquisa').append($('<option>', { 
-        value: item.value,
-        text : item.text 
+        value: '',
+        text : item
     }));
+    $('#select_linhas_pesquisa').material_select();
 });
     });
 }
@@ -134,7 +134,6 @@ $(".select_li").click(function(){
 
     //fecha o ul
     $('#category-list').toggle();
-
     var uf = String($(this).text());
     if(uf == 'TODOS'){
         Materialize.toast('Listando todos os Programa de Mestrado', 4000);
@@ -145,18 +144,50 @@ $(".select_li").click(function(){
     $.getJSON('js/pontos.json', function (pontos) {
         $.each(pontos, function (index, ponto) {
             if(uf == ponto.UF){
+                $("#span_uf").html("TODOS");
                 pontos_uf.push(ponto);
             }
         });
 
         if(pontos_uf.length > 0){
+            $("#span_uf").html(uf);
         Materialize.toast('Foram encontrados '+ pontos_uf.length+' Programa(s) de Mestrado em '+uf, 4000);    
             carregarPontos(pontos_uf);
     }else{
-        Materialize.toast('Não foi encontrado nenhum Programa de Mestrado encontrado', 4000);
+        Materialize.toast('Não foi encontrado nenhum Programa de Mestrado encontrado em '+uf, 4000);
     }
     });
 });
 
 
+$("#select_linhas_pesquisa").change(function(){
+    $('#select_linhas_pesquisa').material_select();
+    var pesquisa = $(this).find(":selected").text();
+    
+    if(pesquisa == "Todas Linhas de Pesquisa"){
+        Materialize.toast('Listando todas as Linhas de Pesquisa', 4000);
+        carregarPontos(0);
+        return;
+    }
+
+   var pontos_linhas = [];
+    $.getJSON('js/pontos.json', function (pontos) {
+        $.each(pontos, function (index, ponto) {
+            $.each(ponto.Linhas_de_Pesquisa, function (i, linha) {
+                var descricao = String(linha.descricao);
+                lLen = pontos_linhas.length;
+                if(pesquisa == descricao){
+                    pontos_linhas.push(ponto);
+                }
+            });
+        });
+        Materialize.toast('Foram encontrados '+ pontos_linhas.length+' Programa(s) de Mestrado', 4000);    
+            carregarPontos(pontos_linhas);
+        $('#select_linhas_pesquisa').material_select();
+    });
+});
+
+$(document).ready(function() {
 carregarPontos(0);
+insereLinhasPesquisa();
+});
