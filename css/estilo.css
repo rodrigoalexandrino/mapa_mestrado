@@ -10,10 +10,14 @@
 .corpo{
 }
 
+/*Pesperctive origin em ação*/
+html,body{
+height:100%;
+}
 /*Mapa*/
 #mapa{
     width: 100%;
-    height: 480px;
+    height: 80%;
 }
 
 .left-10{
