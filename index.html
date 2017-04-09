@@ -35,44 +35,19 @@
             </nav>
         </li>
         <li class="card" style="position: absolute; top:55px;">
+                <label for="select_cursos">Filtre por Curso</label>
                 <select id="select_cursos">
                     <option value="" selected>Todos os Cursos</option>
                 </select>
-            <div class="card-content">
-                <h5>Mapa</h5>
-                <p>
-                    Este mapa comtém a nível de Brasil todos os programas de pós-graduação em ciência
-                    da computação (PPGCC) com nota existentes no programa sucupira.
-                    Também lista as informações de cada programa, tais como: curso, número de docentes,
-                    numero de egresso, linhas de pesquisa e etc.
-                </p>
-            </div>
-            <div class="card-action">
-                &copy;DARSH7N
-                <p><a href="https://github.com/rodrigoalexandrino/mapa_mestrado" target="_blank">
-                    Colabore no GitHub
-                </a>
-                </p>
-            </div>
-        </li>
-    </ul>
+                <p/>
 
-    <nav class="fixed  purple darken-3">
-            <div class="nav-wrapper">
-            <select id="select_linhas_pesquisa">
-                <option value="" selected>Todas Linhas de Pesquisa</option>
-            </select>
-            </div>
-    </nav>
+                <label for="select_linhas_pesquisa">Filtre por Linha de Pesquisa</label>
+                <select id="select_linhas_pesquisa">
+                    <option value="" selected>Todas Linhas de Pesquisa</option>
+                </select>
+                <p/>
 
-</header>
-
-<div class="main">
-    <nav class="top-nav fixed  grey darken-4" style="height: 60px;">
-        <div class="">
-            <div class="nav-wrapper">
-                <div class="col-xs">
-                    <div id="" class="input-field col s12" style="text-align: left;">
+                <div class="input-field col s12" style="text-align: left;">
                         <span class="hide-on-med-and-down left-10" style="margin-right: 7px;">Filtre por estado</span>
                         <!-- Dropdown Trigger -->
                         <a class="dropdown-button btn green darken-1 left-10"
@@ -184,11 +159,31 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+            <div class="card-content">
+                <h5>Informações</h5>
+                <p>
+                    Este mapa contém a nível de Brasil todos os programas de pós-graduação em ciência
+                    da computação (PPGCC) com nota <b>3</b> existentes no programa sucupira.
+                    Também lista as informações de cada programa, tais como: curso, número de docentes,
+                    número de egressos, linhas de pesquisa e etc.
+                </p>
             </div>
-        </div>
+            <div class="card-action">
+                <!-- &copy;DARSH7N -->
+                <a href="https://github.com/rodrigoalexandrino/mapa_mestrado" target="_blank">
+                    Colabore no GitHub
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <nav class="fixed  purple darken-3">
+            <div class="nav-wrapper">
+            
+            </div>
     </nav>
-</div>
+
+</header>
 
 <!-- Modal -->
 <!-- Modal Structure -->

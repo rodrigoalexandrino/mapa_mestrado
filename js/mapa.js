@@ -224,7 +224,7 @@ $("#select_cursos").change(function(){
     var pesquisa = $(this).find(":selected").text();
     
     if(pesquisa == "Todos os Cursos"){
-        Materialize.toast('Listando todas as Linhas de Pesquisa', 4000);
+        Materialize.toast('Listando todos os Cursos', 4000);
         carregarPontos(0);
         return;
     }
