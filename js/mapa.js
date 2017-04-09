@@ -126,7 +126,37 @@ function insereLinhasPesquisa(){
         text : item
     }));
     $('#select_linhas_pesquisa').material_select();
-});
+    });
+    });
+}
+
+function insereCursos(){
+    $('#select_cursos').material_select();
+    var cursos = [];
+    $.getJSON('js/pontos.json', function (pontos) {
+        $.each(pontos, function (index, ponto) {
+            var curso = String(ponto.Curso);
+                lLen = cursos.length;
+                if(cursos.length == 0){
+                    cursos[lLen] = curso;
+                }else{
+                    for (j = 0; j < lLen; j++) {
+                        if(cursos[j] === curso){
+                        }else{
+                            cursos[lLen] = curso;
+                        }
+                    }
+                }
+        });
+        cursos.sort();
+    
+        $.each(cursos, function (i, item) {
+    $('#select_cursos').append($('<option>', { 
+        value: '',
+        text : item
+    }));
+    $('#select_cursos').material_select();
+    });
     });
 }
 
@@ -162,6 +192,7 @@ $(".select_li").click(function(){
 
 $("#select_linhas_pesquisa").change(function(){
     $('#select_linhas_pesquisa').material_select();
+    
     var pesquisa = $(this).find(":selected").text();
     
     if(pesquisa == "Todas Linhas de Pesquisa"){
@@ -183,11 +214,37 @@ $("#select_linhas_pesquisa").change(function(){
         });
         Materialize.toast('Foram encontrados '+ pontos_linhas.length+' Programa(s) de Mestrado', 4000);    
             carregarPontos(pontos_linhas);
-        $('#select_linhas_pesquisa').material_select();
+        
+    });
+});
+
+$("#select_cursos").change(function(){
+    $('#select_cursos').material_select();
+    
+    var pesquisa = $(this).find(":selected").text();
+    
+    if(pesquisa == "Todos os Cursos"){
+        Materialize.toast('Listando todas as Linhas de Pesquisa', 4000);
+        carregarPontos(0);
+        return;
+    }
+
+   var pontos_cursos = [];
+    $.getJSON('js/pontos.json', function (pontos) {
+        $.each(pontos, function (index, ponto) {
+            var curso = String(ponto.Curso);
+                lLen = pontos_cursos.length;
+                if(pesquisa == curso){
+                    pontos_cursos.push(ponto);
+                }
+        });
+        Materialize.toast('Foram encontrados '+ pontos_cursos.length+' Programa(s) de Mestrado', 4000);    
+            carregarPontos(pontos_cursos);
     });
 });
 
 $(document).ready(function() {
-carregarPontos(0);
-insereLinhasPesquisa();
+    carregarPontos(0);
+    insereLinhasPesquisa();
+    insereCursos();
 });

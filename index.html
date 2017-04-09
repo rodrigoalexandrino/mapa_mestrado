@@ -51,34 +51,16 @@
                 &copy;DARSH7N
             </div>
         </li>
-        <li class="z-depth-5"
-            style="position: absolute; z-index: 99; overflow: visible; background: rgba(0, 0, 0, .8); color: #ffffff; border-radius: 4px; left: 5px; top: 80px; width: 290px;">
-            <a class="dropdown-button white-text waves-effect waves-light style-neighborhood" href="#"
-               data-activates="neighbourhood-list">
-                <span class="placesButton">
-                    Todos os Cursos
-                </span>
-                <i class="material-icons left white-text" data-activates="neighbourhood-list">filter_list</i>
-            </a>
-            <ul id="neighbourhood-list" class="dropdown-content scrollbar"
-                style="z-index: 99999; max-height: 500px; overflow: auto; background: rgb(255, 255, 255); width: 260px; position: absolute; top: 0px; left: 15px; opacity: 1; display: none;">
-                <li class=""><a onclick="setCurso('all')" class="waves-effect waves-light">TODOS OS CURSOS</a></li>
-                <li class=""><a onclick="setCurso('1')" class="waves-effect waves-light">COMPUTAÇÃO</a></li>
-                <li class=""><a onclick="setCurso('2')" class="waves-effect waves-light">CIÊNCIAS DA COMPUTAÇÃO</a>
-                </li>
-                <li class=""><a onclick="setCurso('3')" class="waves-effect waves-light">COMPUTAÇÃO APLICADA</a></li>
-                <li class=""><a onclick="setNeighbourhood('4')" class="waves-effect waves-light">ENGENHARIA DA
-                    COMPUTAÇÃO</a></li>
-                <li class=""><a onclick="setNeighbourhood('5')" class="waves-effect waves-light">INFORMÁTICA</a></li>
-            </ul>
-        </li>
+        <select id="select_cursos">
+                <option value="" selected>Todos os Cursos</option>
+            </select>
     </ul>
 
     <nav class="fixed  purple darken-3">
             <div class="nav-wrapper">
-                        <select id="select_linhas_pesquisa">
-                                        <option value="" selected>Todas Linhas de Pesquisa</option>
-                                    </select>
+            <select id="select_linhas_pesquisa">
+                <option value="" selected>Todas Linhas de Pesquisa</option>
+            </select>
             </div>
     </nav>
 
