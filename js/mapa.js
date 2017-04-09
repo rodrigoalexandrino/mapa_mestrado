@@ -50,7 +50,7 @@ function lerArray(pontos){
             //criação do marcador
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(ponto.Latitude, ponto.Longitude),
-                title: ponto.Universidade + " - " + ponto.Sigla,
+                title: ponto.Universidade,
                 icon: 'img/marcador.png'
             });
 
@@ -64,7 +64,7 @@ function lerArray(pontos){
 
             //listener do clique no marcador
             infoBox[index].listener = google.maps.event.addListener(marker, 'click', function (e) {
-                $("#universidade").html(ponto.Universidade + " - " + ponto.Sigla);
+                $("#universidade").html(ponto.Universidade);
                 $("#programa").html('<b>Curso:</b> '+ ponto.Curso);
                 // $("#codigo_programa").html("<b>Código:</b> "+ ponto.Codigo);
                 $("#pagina").html("<b>Página:</b> <a target=\"_blank\" href=\"" + ponto.Pagina +"\"\>" + ponto.Pagina +"</a>");
