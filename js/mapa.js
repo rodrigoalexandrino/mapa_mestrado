@@ -105,17 +105,9 @@ function insereLinhasPesquisa(){
         $.each(pontos, function (index, ponto) {
             $.each(ponto.Linhas_de_Pesquisa, function (i, linha) {
                 var descricao = String(linha.descricao);
-                lLen = linhas_pesquisa.length;
-                if(linhas_pesquisa.length == 0){
-                    linhas_pesquisa[lLen] = descricao;
-                }else{
-                    for (j = 0; j < lLen; j++) {
-                        if(linhas_pesquisa[j] === descricao){
-                        }else{
-                            linhas_pesquisa[lLen] = descricao;
-                        }
+                    if(!isInArray(descricao, linhas_pesquisa)){
+                        linhas_pesquisa.push(descricao);
                     }
-                }
             });
         });
         linhas_pesquisa.sort();
@@ -136,16 +128,9 @@ function insereCursos(){
     $.getJSON('js/pontos.json', function (pontos) {
         $.each(pontos, function (index, ponto) {
             var curso = String(ponto.Curso);
-                lLen = cursos.length;
-                if(cursos.length == 0){
-                    cursos[lLen] = curso;
-                }else{
-                    for (j = 0; j < lLen; j++) {
-                        if(cursos[j] === curso){
-                        }else{
-                            cursos[lLen] = curso;
-                        }
-                    }
+                
+                if(!isInArray(curso, cursos)){
+                    cursos.push(curso);
                 }
         });
         cursos.sort();
@@ -160,39 +145,39 @@ function insereCursos(){
     });
 }
 
-$(".select_li").click(function(){
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
 
-    //fecha o ul
-    $('#category-list').toggle();
-    var uf = String($(this).text());
-    if(uf == 'TODOS'){
-        Materialize.toast('Listando todos os Programa de Mestrado', 4000);
-        carregarPontos(0);
-        return;
-    }
-    var pontos_uf = [];
+function insereUF(){
+    $('#select_ufs').material_select();
+    var ufs = [];
     $.getJSON('js/pontos.json', function (pontos) {
         $.each(pontos, function (index, ponto) {
-            if(uf == ponto.UF){
-                $("#span_uf").html("TODOS");
-                pontos_uf.push(ponto);
-            }
+            var uf = String(ponto.UF);
+                if(!isInArray(uf, ufs)){
+                    ufs.push(uf);
+                }
         });
 
-        if(pontos_uf.length > 0){
-            $("#span_uf").html(uf);
-        Materialize.toast('Foram encontrados '+ pontos_uf.length+' Programa(s) de Mestrado em '+uf, 4000);    
-            carregarPontos(pontos_uf);
-    }else{
-        Materialize.toast('Não foi encontrado nenhum Programa de Mestrado encontrado em '+uf, 4000);
-    }
-    });
-});
+        ufs.sort();
 
+        $.each(ufs, function (i, item) {
+            $('#select_ufs').append($('<option>', { 
+                value: '',
+                text : item
+        }));
+    $('#select_ufs').material_select();
+        });
+    });
+}
 
 $("#select_linhas_pesquisa").change(function(){
     $('#select_linhas_pesquisa').material_select();
     
+    $("#select_cursos").prop('selectedIndex', 0).material_select();
+    $("#select_ufs").prop('selectedIndex', 0).material_select();
+
     var pesquisa = $(this).find(":selected").text();
     
     if(pesquisa == "Todas Linhas de Pesquisa"){
@@ -221,6 +206,9 @@ $("#select_linhas_pesquisa").change(function(){
 $("#select_cursos").change(function(){
     $('#select_cursos').material_select();
     
+    $("#select_ufs").prop('selectedIndex', 0).material_select();
+    $("#select_linhas_pesquisa").prop('selectedIndex', 0).material_select();
+
     var pesquisa = $(this).find(":selected").text();
     
     if(pesquisa == "Todos os Cursos"){
@@ -243,8 +231,39 @@ $("#select_cursos").change(function(){
     });
 });
 
+
+$("#select_ufs").change(function(){
+    $('#select_ufs').material_select();
+    
+    $("#select_cursos").prop('selectedIndex', 0).material_select();
+    $("#select_linhas_pesquisa").prop('selectedIndex', 0).material_select();
+    
+
+    var pesquisa = $(this).find(":selected").text();
+    
+    if(pesquisa == "Todos"){
+        Materialize.toast('Listando todos os Programas', 4000);
+        carregarPontos(0);
+        return;
+    }
+
+   var pontos_ufs = [];
+    $.getJSON('js/pontos.json', function (pontos) {
+        $.each(pontos, function (index, ponto) {
+            var uf = String(ponto.UF);
+                lLen = pontos_ufs.length;
+                if(pesquisa == uf){
+                    pontos_ufs.push(ponto);
+                }
+        });
+        Materialize.toast('Foram encontrados '+ pontos_ufs.length+' Programa(s) de Mestrado em '+pesquisa, 4000);    
+        carregarPontos(pontos_ufs);
+    });
+});
+
 $(document).ready(function() {
     carregarPontos(0);
     insereLinhasPesquisa();
     insereCursos();
+    insereUF();
 });

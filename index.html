@@ -35,131 +35,26 @@
             </nav>
         </li>
         <li class="card" style="position: absolute; top:55px;">
+        <div class="card-content">
+        <p>
                 <label for="select_cursos">Filtre por Curso</label>
                 <select id="select_cursos">
                     <option value="" selected>Todos os Cursos</option>
                 </select>
                 <p/>
-
+                <p>
                 <label for="select_linhas_pesquisa">Filtre por Linha de Pesquisa</label>
                 <select id="select_linhas_pesquisa">
                     <option value="" selected>Todas Linhas de Pesquisa</option>
                 </select>
-                <p/>
-
-                <div class="input-field col s12" style="text-align: left;">
-                        <span class="hide-on-med-and-down left-10" style="margin-right: 7px;">Filtre por estado</span>
-                        <!-- Dropdown Trigger -->
-                        <a class="dropdown-button btn green darken-1 left-10"
-                           style="padding: 0 1rem; margin-left:0px;  width: 150px;"
-                           data-activates="category-list">
-                            <span id="span_uf" class="action-category-current">UF</span>
-                            <i class="material-icons right"
-                               style="line-height: inherit;">
-                                expand_more
-                            </i>
-                        </a>
-                        <ul id="category-list"
-                            class="left dropdown-content action-categorytab-set blue-grey darken-3 white-text"
-                            data-select="#selectCategory" data-label="#categoriesButton"
-                            style="z-index:99999; max-height: 540px; overflow: auto; margin-top: 0px; min-width: 280px; width: 100%; max-width: 360px;">
-                            <li class="waves-effect waves-light action-category-change on" data-category-id="all"
-                                data-label="Everything">
-                                <a class="select_li item white-text">TODOS</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change on" data-category-id="all"
-                                data-label="Everything">
-                                <a class="select_li item white-text">AC</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change"
-                                data-category-id="2">
-                                <a class="select_li item white-text">AL</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change"
-                                data-category-id="4">
-                                <a class="select_li item white-text">AM</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change"
-                                data-category-id="3">
-                                <a class="select_li item white-text">AP</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change"
-                                data-category-id="1">
-                                <a class="select_li item white-text">BA</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="27">
-                                <a class="select_li item white-text">CE</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="5">
-                            <a class="select_li item white-text">DF</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change  hidden " data-category-id="7">
-                                <a class="select_li item white-text">ES</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="8">
-                                <a class="select_li item white-text">GO</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="9">
-                                <a class="select_li item white-text">MA</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change  hidden " data-category-id="10">
-                                <a class="select_li item white-text">MT</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="11"
-                                data-label="Service">
-                                <a class="select_li item white-text">MS</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="12"
-                                data-label="Service">
-                                <a class="select_li item white-text">MG</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change  hidden " data-category-id="13">
-                                <a class="select_li item white-text">PA</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="14">
-                                <a class="select_li item white-text">PB</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="15">
-                                <a class="select_li item white-text">PR</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="16">
-                                <a class="select_li item white-text">PE</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="17">
-                                <a class="select_li item white-text">PI</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="18">
-                                <a class="select_li item white-text">RJ</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="19">
-                                <a class="select_li item white-text">RN</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="20">
-                                <a class="select_li item white-text">RO</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="21">
-                                <a class="select_li item white-text">RR</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="22">
-                                <a class="select_li item white-text">RS</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="23">
-                                <a class="select_li item white-text">SC</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="24">
-                                <a class="select_li item white-text">SE</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="25"
-                                data-label="Service">
-                                <a class="select_li item white-text">SP</a>
-                            </li>
-                            <li class="waves-effect waves-light action-category-change" data-category-id="26"
-                                data-label="Service">
-                                <a class="select_li item white-text">TO</a>
-                            </li>
-                        </ul>
-                    </div>
-            <div class="card-content">
+</p>
+<p>
+                <label for="select_ufs">Filtre por UF</label>
+                <select id="select_ufs">
+                    <option value="" selected>Todos</option>
+                </select>
+   </p>         
+            
                 <h5>Informações</h5>
                 <p>
                     Este mapa contém a nível de Brasil todos os programas de pós-graduação em ciência
@@ -182,9 +77,7 @@
             
             </div>
     </nav>
-
 </header>
-
 <!-- Modal -->
 <!-- Modal Structure -->
 <div id="myModal" class="modal modal-fixed-footer">
@@ -303,6 +196,7 @@
         </div>
     </div>
 </div>
+
 
 <div id="mapa"></div>
 
