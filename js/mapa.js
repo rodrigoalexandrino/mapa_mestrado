@@ -25,7 +25,6 @@ function initialize() {
 function carregarPontos(filtro) {
 
     initialize();
-
     if(filtro == 0){
         $.getJSON('js/pontos.json', function (pontos) {
             var latlngbounds = new google.maps.LatLngBounds();

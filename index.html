@@ -35,26 +35,10 @@
             </nav>
         </li>
         <li class="card" style="position: absolute; top:55px;">
+        <div class="card-image">
+                <img src="img/1.jpg" style="height: 200px;">
+            </div>
             <div class="card-content">
-
-                  <div class="select_content">
-                      <select id="select_cursos">
-                          <option class="left-50" value="" selected>Todos os Cursos</option>
-                      </select>
-                  </div>
-
-                <p>
-                    <label for="select_linhas_pesquisa">Filtre por Linha de Pesquisa</label>
-                    <select id="select_linhas_pesquisa">
-                        <option value="" selected>Todas Linhas de Pesquisa</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="select_ufs">Filtre por UF</label>
-                    <select id="select_ufs">
-                        <option value="" selected>Todos</option>
-                    </select>
-                </p>
 
                 <h5>Informações</h5>
                 <p>
@@ -75,8 +59,39 @@
 
     <nav class="fixed  purple darken-3">
         <div class="nav-wrapper">
+                <ul id="ul_search" class=" collapsible left hide-on-med-and-down" data-collapsible="accordion"
+                    style="width: 100%; background: transparent; margin-top: 0; position: absolute; top:0; border: none; z-index: 999">
+                    <li style="width: 100%;">
+                        <div class="collapsible-header"
+                             style="height: 64px; background: transparent; margin-top: 0; border: none; z-index: 998"><i
+                                class="material-icons">search</i></div>
+                        <div class="collapsible-body"
+                             style="background: #ffffff; margin-top: 0;  border: none; z-index: 998">
+                            <div class="row" style="color: #000;;z-index: 999">
+                                <div class="input-field col s12">
+                                    <div class="select_content">
+                      <select id="select_cursos">
+                          <option class="left-50" value="" selected>Todos os Cursos</option>
+                      </select>
+                  </div>
 
-        </div>
+                    <select id="select_linhas_pesquisa">
+                        <option value="" selected>Todas Linhas de Pesquisa</option>
+                    </select>
+                    
+                    <select id="select_ufs">
+                        <option value="" selected>Todos</option>
+                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down" style="position: absolute;  right: 3px; top: 2px; z-index: 999">
+                    <a href="mobile.html"><i class="material-icons">more_vert</i></a>
+                </ul>
+            </div>
     </nav>
 </header>
 <!-- Modal -->
