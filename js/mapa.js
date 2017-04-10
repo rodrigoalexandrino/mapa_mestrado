@@ -96,6 +96,8 @@ function lerArray(pontos){
             latlngbounds.extend(marker.position);
         });
         map.fitBounds(latlngbounds);
+
+        $("#total_programas").val(pontos.length);
 }
 
 function insereLinhasPesquisa(){

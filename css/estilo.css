@@ -40,6 +40,10 @@ header, .main, .footer{
     line-height: 1.5;
 }
 
+footer{
+    margin-left: 300px;
+}
+
 .page-footer{
     height: 60px;
     width: 100%;

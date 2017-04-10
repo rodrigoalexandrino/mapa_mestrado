@@ -35,26 +35,27 @@
             </nav>
         </li>
         <li class="card" style="position: absolute; top:55px;">
-        <div class="card-content">
-        <p>
-                <label for="select_cursos">Filtre por Curso</label>
-                <select id="select_cursos">
-                    <option value="" selected>Todos os Cursos</option>
-                </select>
-                <p/>
+            <div class="card-content">
+
+                  <div class="select_content">
+                      <select id="select_cursos">
+                          <option class="left-50" value="" selected>Todos os Cursos</option>
+                      </select>
+                  </div>
+
                 <p>
-                <label for="select_linhas_pesquisa">Filtre por Linha de Pesquisa</label>
-                <select id="select_linhas_pesquisa">
-                    <option value="" selected>Todas Linhas de Pesquisa</option>
-                </select>
-</p>
-<p>
-                <label for="select_ufs">Filtre por UF</label>
-                <select id="select_ufs">
-                    <option value="" selected>Todos</option>
-                </select>
-   </p>         
-            
+                    <label for="select_linhas_pesquisa">Filtre por Linha de Pesquisa</label>
+                    <select id="select_linhas_pesquisa">
+                        <option value="" selected>Todas Linhas de Pesquisa</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="select_ufs">Filtre por UF</label>
+                    <select id="select_ufs">
+                        <option value="" selected>Todos</option>
+                    </select>
+                </p>
+
                 <h5>Informações</h5>
                 <p>
                     Este mapa contém a nível de Brasil todos os programas de pós-graduação em ciência
@@ -73,9 +74,9 @@
     </ul>
 
     <nav class="fixed  purple darken-3">
-            <div class="nav-wrapper">
-            
-            </div>
+        <div class="nav-wrapper">
+
+        </div>
     </nav>
 </header>
 <!-- Modal -->
@@ -100,7 +101,7 @@
                                 <a class="btn-floating btn-flat waves-effect waves-light transparent white-text enhanced-button-close modal-close "
                                    style="top:0px; margin-right: -6px;">
                                     <i class="mdi-action-highlight-remove white-text"
-                                        style="font-size: 2.2rem;">
+                                       style="font-size: 2.2rem;">
                                     </i>
                                 </a>
                             </div>
@@ -200,8 +201,10 @@
 
 <div id="mapa"></div>
 
-<footer class="page-footer purple darken-3">
+<footer>
+    <div class="purple darken-3 page-footer ">
 
+    </div>
 </footer>
 <script src="js/jquery.min.js"></script>
 
