@@ -30,8 +30,12 @@ header, .main, .footer{
 
 @media (max-width:992px) {
 
-    header, .main, .footer{
+    header, .main, footer{
         padding-left: 0;
+    }
+
+    footer{
+        margin-left: 0;
     }
 }
 
@@ -41,6 +45,7 @@ header, .main, .footer{
 }
 
 footer{
+    z-index: 999;
     margin-left: 300px;
 }
 
