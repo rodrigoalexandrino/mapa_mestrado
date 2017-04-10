@@ -549,5 +549,188 @@
       { "descricao" : "Modelos Analíticos e de Simulação Processamento de Imagens"},
       { "descricao" : "Sistemas de Informação e Sistemas Distribuídos"}
     ]
-  }
+  },
+  {
+        "Universidade": "CENTRO DE ESTUDOS E SISTEMAS AVANÇADOS DO RECIFE (CESAR)",
+        "Curso":"ENGENHARIA DE SOFTWARE",
+        "Codigo":"25019015001P0",
+        "Pagina": "http://www.cesar.edu.br",
+        "Cidade":"Recife ",
+        "UF":"PE",
+        "Latitude": -8.0583,
+        "Longitude": -34.87195,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "Engenharia de software"}, 
+            { "descricao" : "Design de Artefatos Digitais"}
+        ],
+        "Docentes_Permanentes":27,
+        "Ano_Criacao":2007,
+        "Qtd_egresso_Mestrado": 0,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    },
+    {
+        "Universidade": "FUNDAÇÃO UNIVERSIDADE DE PERNAMBUCO (FESP/UPE)",
+        "Curso":"ENGENHARIA DA COMPUTAÇÃO",
+        "Codigo":"25004018011P1",
+        "Pagina": "http://mestrado.ecomp.poli.br",
+        "Cidade":"Recife ",
+        "UF":"PE",
+        "Latitude": -8.06114,
+        "Longitude": -34.90291,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "COMPUTAÇÃO INTELIGENTE"},
+            { "descricao" : "ENGENHARIA DE SOFTWARE"}
+        ],
+        "Docentes_Permanentes":13,
+        "Ano_Criacao":2006,
+        "Qtd_egresso_Mestrado": 145,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":5
+    },
+    {
+        "Universidade": "FUNDAÇÃO UNIVERSIDADE FEDERAL DE SERGIPE (FUFSE)",
+        "Curso":"Ciência da Computação",
+        "Codigo":"27001016029P4",
+        "Pagina": "http://www.posgraduacao.ufs.br/procc",
+        "Cidade":"São Cristóvão ",
+        "UF":"SE",
+        "Latitude": -10.92366,
+        "Longitude": -37.10143,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "Computação Inteligente"},
+            { "descricao" : "Engenharia de Software"},
+            { "descricao" : "Sistemas de Informação"},
+            { "descricao" : "Redes de Computadores"},
+            { "descricao" : "Sistemas Distribuídos"}
+        ],
+        "Docentes_Permanentes":20,
+        "Ano_Criacao":2010,
+        "Qtd_egresso_Mestrado": 72,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    },
+    {
+        "Universidade": "FUNDAÇÃO UNIVERSIDADE FEDERAL DO PIAUÍ (FUFPI)",
+        "Curso":"Ciência da Computação",
+        "Codigo":"21001014031P2",
+        "Pagina": "http://www.ppgcc.ufpi.br/",
+        "Cidade":"Teresina",
+        "UF":"PI",
+        "Latitude": -5.05686,
+        "Longitude": -42.79108,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "SISTEMAS DE COMPUTAÇÃO"},
+            { "descricao" : "COMPUTAÇÃO APLICADA"}
+        ],
+        "Docentes_Permanentes":13,
+        "Ano_Criacao":2012,
+        "Qtd_egresso_Mestrado": 41,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    },
+    {
+        "Universidade": "INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO CEARÁ (IFCE)",
+        "Curso":"Ciência da Computação",
+        "Codigo":"22008012004P2",
+        "Pagina": "http://ppgcc.ifce.edu.br",
+        "cidade":"Fortaleza",
+        "UF":"CE",
+        "Latitude": -3.74446,
+        "Longitude": -38.53622,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "Inteligência Artificial"},
+            { "descricao" : "Computação Aplicada"},
+            { "descricao" : "Engenharia de Software"}
+        ],
+        "Docentes_Permanentes":14,
+        "Ano_Criacao":2014,
+        "Qtd_egresso_Mestrado": 13,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    },
+    {
+        "Universidade": "UNIVERSIDADE DO ESTADO DO RIO GRANDE DO NORTE (UERN)",
+        "Curso":"CIÊNCIA DA COMPUTAÇÃO - UERN - UFERSA",
+        "Codigo":"23002018002P4",
+        "Pagina": "http://ppgcc.uern.br",
+        "cidade":"Mossoró",
+        "UF":"RN",
+        "Latitude": -5.20289,
+        "Longitude": -37.32755,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "Tecnologias aplicadas à educação e à saúde"},
+            { "descricao" : "Otimização e Inteligência computacional"},
+            { "descricao" : "Projeto de Sistemas e Circuitos"}
+        ],
+        "Docentes_Permanentes":15,
+        "Ano_Criacao":2008,
+        "Qtd_egresso_Mestrado": 114,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    },
+    {
+        "Universidade": "UNIVERSIDADE ESTADUAL DO CEARÁ (UECE)",
+        "Curso":"CIÊNCIA DA COMPUTAÇÃO",
+        "Codigo":"22003010018P1",
+        "Pagina": "http://www.uece.br/macc/",
+        "cidade":"Fortaleza",
+        "UF":"CE",
+        "Latitude": -3.78704,
+        "Longitude": -38.55273,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "Engenharia de Software"},
+            { "descricao" : "Inteligência Computacional"},
+            { "descricao" : "Otimização Matemática"},
+            { "descricao" : "Redes e Sistemas Distribuídos"}
+        ],
+        "Docentes_Permanentes":8,
+        "Ano_Criacao":2007,
+        "Qtd_egresso_Mestrado": 78,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    },
+    {
+        "Universidade": "UNIVERSIDADE ESTADUAL DO CEARÁ (UECE)",
+        "Curso":"COMPUTAÇÃO APLICADA",
+        "Codigo":"22003010016P9",
+        "Pagina": "http://mpcomp.pgcomp.uece.br",
+        "Cidade":"Fortaleza",
+        "UF":"CE",
+        "Latitude": -3.78696,
+        "Longitude": -38.55274,
+        "Linhas_de_Pesquisa":[
+                { "descricao" : "Educação à Distância"},
+                { "descricao" : "Elaboração de Software Educativo;"},
+                { "descricao" : "Sistemas de Otimização"},
+                { "descricao" : "Sistemas Inteligentes"},
+                { "descricao" : "Sistemas de Gestão Empresarial"},
+                { "descricao" : "Redes de Comunicação"},
+                { "descricao" : "Sistemas Distribuídos"}
+        ],
+        "Docentes_Permanentes":17,
+        "Ano_Criacao":2002,
+        "Qtd_egresso_Mestrado": 148,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    },
+    {
+        "Universidade": "UNIVERSIDADE ESTADUAL DO MARANHÃO (UEMA)",
+        "Curso":"Engenharia de Computação e Sistemas",
+        "Codigo":"20002017004P9",
+        "Pagina": "http://www.pecs.uema.br",
+        "Cidade":"São Luís",
+        "UF":"MA",
+        "Latitude": -2.58342,
+        "Longitude": -44.20998,
+        "Linhas_de_Pesquisa":[
+            { "descricao" : "Computação Aplicada"},
+            { "descricao" : "Tecnologia da Informação"}
+        ],
+        "Docentes_Permanentes":19,
+        "Ano_Criacao":2011,
+        "Qtd_egresso_Mestrado": 19,
+        "Qtd_egresso_Doutorado": 0,
+        "Bolsistas":0
+    }
 ]
